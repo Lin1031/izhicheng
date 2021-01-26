@@ -10,19 +10,14 @@ from selenium.webdriver.common.by import By
 import time
 import sys
 
-stuID='211806229'
-province='福建省'
-city='福州市'
-region='仓山区'
 def tianbiao(stuID,province,city,region):
-    # chrome_options = Options()#无界面对象
-    # chrome_options.add_argument('--headless')  #浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
-    # chrome_options.add_argument('disable-dev-shm-usage')#禁用-开发-SHM-使用
-    # chrome_options.add_argument('--disable-gpu')#谷歌文档提到需要加上这个属性来规避bug
-    # chrome_options.add_argument('no-sandbox') #解决DevToolsActivePort文件不存在的报错
-    #driver = webdriver.Chrome(chrome_options=chrome_options, executable_path='/usr/local/bin/chromedriver')
+    chrome_options = Options()#无界面对象
+    chrome_options.add_argument('--headless')  #浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
+    chrome_options.add_argument('disable-dev-shm-usage')#禁用-开发-SHM-使用
+    chrome_options.add_argument('--disable-gpu')#谷歌文档提到需要加上这个属性来规避bug
+    chrome_options.add_argument('no-sandbox') #解决DevToolsActivePort文件不存在的报错
+    driver = webdriver.Chrome(chrome_options=chrome_options, executable_path='/usr/local/bin/chromedriver')
 
-    driver = webdriver.Chrome()
     # 表单地址
     url = 'http://datawarn9.fdzcxy.edu.cn/datawarn/ReportServer?formlet=app/sanbao.frm&op=h5&userno=' + stuID+'#/form'
     driver.get(url)  # 打开浏览器
@@ -192,5 +187,5 @@ def tianbiao(stuID,province,city,region):
 
 
 if __name__ == '__main__':
-    #tianbiao(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
-    tianbiao(stuID,province,city,region)
+    tianbiao(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
+    
