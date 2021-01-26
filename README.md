@@ -1,8 +1,11 @@
 # i至诚自动化打卡
-<font color="red" size="20">源码开源，希望用于学习</font>
+
+## 源码开源，希望用于学习
 
 ### 零、环境准备
+
 centos7云服务准备：https://developer.aliyun.com/adc/student/
+
 环境准备：https://www.cnblogs.com/Lin1031/p/14187135.html
 
 ### 一、在根目录下新建一个py文件
@@ -12,6 +15,7 @@ touch tianbiao.py
 vim tianbiao.py
 ```
 ### 二、编辑python程序(注意，要修改path地址为本地，driverchrome路径)
+
 
 #### 开源不易，希望GitHub给个star
 #### GitHub地址：https://github.com/Lin1031/izhicheng
