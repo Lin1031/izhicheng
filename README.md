@@ -8,6 +8,8 @@ centos7云服务准备：https://developer.aliyun.com/adc/student/
 
 环境准备：https://www.cnblogs.com/Lin1031/p/14187135.html
 
+博客园地址：https://www.cnblogs.com/Lin1031/p/14187137.html
+
 ### 一、在根目录下新建一个py文件
 ```
 cd
