@@ -135,7 +135,7 @@ def tianbiao(stuID, province, city, region):
     # 选择区
     flag3 = False
     driver.find_element_by_xpath(
-        '/html/body/div/div/div[1]/div/div/div[2]/div/div/div/div[4]/div[2]/div/div[3]/div[2]/div[1]').click()
+        '/html/body/div/div/div[1]/div/div/div[2]/div/div/div/div[4]/div[2]/div/div[3]/div[2]').click()
     time.sleep(2)
     driver.implicitly_wait(10)
     a3 = driver.find_elements_by_xpath(
@@ -150,7 +150,7 @@ def tianbiao(stuID, province, city, region):
             flag3 = True
         else:
             driver.find_element_by_xpath(
-                '/html/body/div/div/div[1]/div/div/div[2]/div/div/div/div[4]/div[2]/div/div[3]/div[2]/div[1]').click()
+                '/html/body/div/div/div[1]/div/div/div[2]/div/div/div/div[4]/div[2]/div/div[3]/div[2]').click()
             time.sleep(2)
             driver.implicitly_wait(10)
             a3 = driver.find_elements_by_xpath(
@@ -201,3 +201,4 @@ def tianbiao(stuID, province, city, region):
 
 if __name__ == '__main__':
     tianbiao(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
+    print(sys.argv[1], "填报成功！")
