@@ -2,6 +2,8 @@
 
 ## 源码开源，希望用于学习
 
+### window自动定时使用 Windows 任务调度程序，可以自行百度
+
 ### 零、环境准备
 
 centos7云服务准备：https://developer.aliyun.com/adc/student/
