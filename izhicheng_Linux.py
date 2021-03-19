@@ -11,6 +11,9 @@ from selenium.webdriver.common.by import By
 import time
 import sys
 
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions
+
 
 def tianbiao(stuID, province, city, region):
     chrome_options = Options()#无界面对象
@@ -24,6 +27,11 @@ def tianbiao(stuID, province, city, region):
     url = 'http://dw10.fdzcxy.edu.cn/datawarn/ReportServer?formlet=app/yibao.frm&op=h5&xh=' + stuID + '#/form'
     driver.get(url)  # 打开浏览器
     time.sleep(2)
+    
+    try:
+        WebDriverWait(driver, 15, 0.5).until(expected_conditions.title_contains("yibao"))
+    finally:
+        driver.refresh()
 
     driver.maximize_window()  # 全屏
     time.sleep(5)
