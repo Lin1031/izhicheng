@@ -11,7 +11,7 @@ import time
 stuID = '21xxxxxxx'
 
 
-def tianbiao(stuID, province, city, region):
+def tianbiao(stuID):
     driver = webdriver.Chrome()
     # 表单地址
     url = 'http://dw10.fdzcxy.edu.cn/datawarn/ReportServer?formlet=app/yibao.frm&op=h5&xh=' + stuID + '#/form'
