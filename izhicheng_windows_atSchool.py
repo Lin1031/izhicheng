@@ -26,13 +26,12 @@ def tianbiao(stuID):
     driver.execute_script("arguments[0].scrollIntoView();", target)
 
     # 确认
-    driver.find_element_by_xpath(
-        '/html/body/div/div/div[1]/div/div/div[2]/div/div/div/div[25]/div[2]/div[2]/input').click()
+    driver.find_element_by_xpath('/html/body/div/div/div[1]/div/div/div[2]/div/div[1]/div/div[27]/div[2]/div[2]/input').click()
     time.sleep(1)
 
     # 点击提交
-    driver.find_element_by_xpath('/html/body/div/div/div[1]/div/div/div[2]/div/div/div/div[26]/div[2]').click()
-    time.sleep(1)
+    driver.find_element_by_xpath('/html/body/div/div/div[1]/div/div/div[2]/div/div[1]/div/div[28]/div[2]').click()
+    time.sleep(2)
 
     driver.quit()
 
