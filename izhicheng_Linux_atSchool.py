@@ -29,19 +29,17 @@ def tianbiao(stuID):
     time.sleep(5)
 
     # 滚动到底部
-    target = driver.find_element_by_xpath("/html/body/div/div/div[1]/div/div/div[2]/div/div/div/div[26]/div[2]")
-    driver.execute_script("arguments[0].scrollIntoView();", target)
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
     # 确认
-    driver.find_element_by_xpath('/html/body/div/div/div[1]/div/div/div[2]/div/div[1]/div/div[27]/div[2]/div[2]/input').click()
+    driver.find_element_by_xpath('//input[@type="checkbox"]').click()
     time.sleep(1)
 
     # 点击提交
-    driver.find_element_by_xpath('/html/body/div/div/div[1]/div/div/div[2]/div/div[1]/div/div[28]/div[2]').click()
+    driver.find_element_by_xpath('//div[@id="SUBMIT"]').click()
     time.sleep(2)
 
     driver.quit()
-
 
 if __name__ == '__main__':
     tianbiao(sys.argv[1])
