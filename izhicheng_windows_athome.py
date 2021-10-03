@@ -19,7 +19,7 @@ region = '鼓楼区'
 def tianbiao(stuID, province, city, region):
     driver = webdriver.Chrome()
     # 表单地址
-    url = 'http://dw10.fdzcxy.edu.cn/datawarn/ReportServer?formlet=app/yibao.frm&op=h5&xh=' + stuID + '#/form'
+    url = 'http://dw10.fdzcxy.edu.cn/datawarn/ReportServer?formlet=app/sjkrb.frm&op=h5&userno=' + stuID + '#/form'
     driver.get(url)  # 打开浏览器
     time.sleep(1)
 
