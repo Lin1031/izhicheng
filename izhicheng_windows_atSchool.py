@@ -14,16 +14,13 @@ stuID = '21xxxxxxx'
 def tianbiao(stuID):
     driver = webdriver.Chrome()
     # 表单地址
-    url = 'http://dw10.fdzcxy.edu.cn/datawarn/ReportServer?formlet=app/yibao.frm&op=h5&xh=' + stuID + '#/form'
+    url = 'http://dw10.fdzcxy.edu.cn/datawarn/ReportServer?formlet=app/sjkrb.frm&op=h5&userno=' + stuID + '#/form'
     driver.get(url)  # 打开浏览器
     time.sleep(2)
 
     driver.maximize_window()  # 全屏
     time.sleep(5)
     
-    # 广告
-    driver.find_element_by_xpath('//div[@class="css-1dbjc4n"]//div[@data-focusable="true"][1]/div[@dir="auto"]').click()
-    time.sleep(1)
     
     # 滚动到底部
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
