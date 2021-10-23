@@ -109,5 +109,35 @@ Centos7发错错误日志到邮箱：https://www.cnblogs.com/Lin1031/p/14401289.
 编写一个 sno.txt 文件，其内容为学号 省 市 区，使用 my.sh 脚本，进行批量读文件。
 注意：sno.txt 中 学号为一行一个人，最后一行不能有空行。若使用批量填报，则定时则设置为该脚本。
 
+###  无服务器使用（无脑，推荐）
+
+### 使用 GitHub Actions（流程很简单 只要加个学号就行）
+
+使用步骤:
+
+- 点击右上角 `star` :)![image-20211023223415973](C:\Users\MSI\AppData\Roaming\Typora\typora-user-images\image-20211023223415973.png)
+
+- 克隆这个仓库到你名下
+
+- ![image-20211023223437524](C:\Users\MSI\AppData\Roaming\Typora\typora-user-images\image-20211023223437524.png)
+
+- 点击 Actions 
+
+  ![image-20211024005053964](C:\Users\MSI\AppData\Roaming\Typora\typora-user-images\image-20211024005053964.png)
+
+- 在仓库设置里面, 设置 secrets 如下
+
+  - `stuID`: 你的学号
+
+    ![image-20211024004751004](C:\Users\MSI\AppData\Roaming\Typora\typora-user-images\image-20211024004751004.png)
+
+  - `API_KEY`: 你的通知[server酱](http://sc.ftqq.com/3.version)的api key，填写之后可以在程序完成打卡之后通知到微信，如果不填写不影响使用(类似的操作)
+
+代码如果已经更改过的，需要保持代码的更新，同步即可
+
+![image-20211024003508381](C:\Users\MSI\AppData\Roaming\Typora\typora-user-images\image-20211024003508381.png)
+
+
+
 ### 参考资料
 https://blog.csdn.net/chengxun02/article/details/105187996
