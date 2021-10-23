@@ -11,13 +11,14 @@ import time
 import os
 
 # 设置全局变量
-STUID = 'STUID'
+stuID = 'stuID'
 api_key = "API_KEY"
 
 # 如果检测到程序在 github actions 内运行，那么读取环境变量中的登录信息
 if os.environ.get('GITHUB_RUN_ID', None):
+    stuID = os.environ['stuID'] 
     api_key = os.environ['API_KEY']  # server酱的api，填了可以微信通知打卡结果，不填没影响
-
+    
 
 def message(key, title):
     """
@@ -28,7 +29,7 @@ def message(key, title):
     requests.get(msg_url)
 
 
-def tianbiao(STUID):
+def tianbiao(stuID):
     chrome_options = Options()  # 无界面对象
     chrome_options.add_argument('--headless')  # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
     chrome_options.add_argument('disable-dev-shm-usage')  # 禁用-开发-SHM-使用
@@ -40,7 +41,7 @@ def tianbiao(STUID):
 
     try:
         # 表单地址
-        url = 'http://dw10.fdzcxy.edu.cn/datawarn/ReportServer?formlet=app/sjkrb.frm&op=h5&userno=' + STUID + '#/form'
+        url = 'http://dw10.fdzcxy.edu.cn/datawarn/ReportServer?formlet=app/sjkrb.frm&op=h5&userno=' + stuID + '#/form'
         driver.get(url)  # 打开浏览器
         time.sleep(1)
 
@@ -64,5 +65,5 @@ def tianbiao(STUID):
 
 
 if __name__ == '__main__':
-    tianbiao(STUID)
-    print(STUID + "打卡成功")
+    tianbiao(stuID)
+    print(stuID + "打卡成功")
