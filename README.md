@@ -117,27 +117,27 @@ Centos7发错错误日志到邮箱：https://www.cnblogs.com/Lin1031/p/14401289.
 
 使用步骤:
 
-- 点击右上角 `star` :)![image-20211023223415973](https://github.com/Lin1031/izhicheng/blob/main/image/image-20211023223415973.png)
+- 点击右上角 `star` :)![image-20211023223415973](https://img2020.cnblogs.com/blog/1535189/202110/1535189-20211024011444420-1054435861.png)
 
 - 克隆这个仓库到你名下
 
-- ![image-20211023223437524](https://github.com/Lin1031/izhicheng/blob/main/image/image-20211023223437524.png)
+- ![image-20211023223437524](https://img2020.cnblogs.com/blog/1535189/202110/1535189-20211024011444220-574369804.png)
 
 - 点击 Actions 
 
-  ![image-20211024005053964](https://github.com/Lin1031/izhicheng/blob/main/image/image-20211024005053964.png)
+  ![image-20211024005053964](https://img2020.cnblogs.com/blog/1535189/202110/1535189-20211024011444006-1748026989.png)
 
 - 在仓库设置里面, 设置 secrets 如下
 
   - `stuID`: 你的学号
 
-    ![image-20211024004751004](https://github.com/Lin1031/izhicheng/blob/main/image/image-20211024004751004.png)
+    ![image-20211024004751004](https://img2020.cnblogs.com/blog/1535189/202110/1535189-20211024011443749-1912034824.png)
 
   - `API_KEY`: 你的通知[server酱](http://sc.ftqq.com/3.version)的api key，填写之后可以在程序完成打卡之后通知到微信，如果不填写不影响使用(类似的操作)
 
 代码如果已经更改过的，需要保持代码的更新，同步即可
 
-![](https://github.com/Lin1031/izhicheng/blob/main/image/image-20211024003427980.png)
+![image-20211024003508381](https://img2020.cnblogs.com/blog/1535189/202110/1535189-20211024011443314-1404804501.png)
 
 ### 参考资料
 https://blog.csdn.net/chengxun02/article/details/105187996
