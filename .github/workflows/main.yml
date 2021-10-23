@@ -38,6 +38,4 @@ jobs:
         stuID: ${{secrets.stuID}} 
         API_KEY:  ${{secrets.API_KEY}} 
       run: |
-        python -m pip install --upgrade pip
-        python -m pip install pytz requests datetime
         python ./Spider/izhicheng.py  
