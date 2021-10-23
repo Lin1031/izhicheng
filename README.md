@@ -113,31 +113,35 @@ Centos7发错错误日志到邮箱：https://www.cnblogs.com/Lin1031/p/14401289.
 
 ### 使用 GitHub Actions（流程很简单 只要加个学号就行）
 
+完成之后, 每天 UTC 0:10 (北京时间 8:10) 自动触发 github actions 进行填报 。
+
 使用步骤:
 
-- 点击右上角 `star` :)![image-20211023223415973](C:\Users\MSI\AppData\Roaming\Typora\typora-user-images\image-20211023223415973.png)
+- 点击右上角 `star` :)![image-20211023223415973](https://github.com/Lin1031/izhicheng/blob/main/image/image-20211023223415973.png)
 
 - 克隆这个仓库到你名下
 
-- ![image-20211023223437524](C:\Users\MSI\AppData\Roaming\Typora\typora-user-images\image-20211023223437524.png)
+- ![image-20211023223437524](https://github.com/Lin1031/izhicheng/blob/main/image/image-20211023223437524.png)
 
 - 点击 Actions 
 
-  ![image-20211024005053964](C:\Users\MSI\AppData\Roaming\Typora\typora-user-images\image-20211024005053964.png)
+  ![image-20211024005053964](https://github.com/Lin1031/izhicheng/blob/main/image/image-20211024005053964.png)
 
 - 在仓库设置里面, 设置 secrets 如下
 
   - `stuID`: 你的学号
 
-    ![image-20211024004751004](C:\Users\MSI\AppData\Roaming\Typora\typora-user-images\image-20211024004751004.png)
+    ![image-20211024004751004](https://github.com/Lin1031/izhicheng/blob/main/image/image-20211024004751004.png)
 
   - `API_KEY`: 你的通知[server酱](http://sc.ftqq.com/3.version)的api key，填写之后可以在程序完成打卡之后通知到微信，如果不填写不影响使用(类似的操作)
 
 代码如果已经更改过的，需要保持代码的更新，同步即可
 
-![image-20211024003508381](C:\Users\MSI\AppData\Roaming\Typora\typora-user-images\image-20211024003508381.png)
-
+![image-20211024003508381](https://github.com/Lin1031/izhicheng/blob/main/image/image-20211024003508380.png)
+ 
 
 
 ### 参考资料
 https://blog.csdn.net/chengxun02/article/details/105187996
+https://blog.csdn.net/a12355556/article/details/112163669
+https://github.com/IanSmith123/ucas-covid19
