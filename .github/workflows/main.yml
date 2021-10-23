@@ -38,4 +38,6 @@ jobs:
         stuID: ${{secrets.stuID}} 
         API_KEY:  ${{secrets.API_KEY}} 
       run: |
+        sudo cp -p ./chrome/chromedriver /usr/bin/
+        chmod -R 777 /usr/bin/chromedriver
         python ./Spider/izhicheng.py  
