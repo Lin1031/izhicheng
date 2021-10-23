@@ -137,9 +137,7 @@ Centos7发错错误日志到邮箱：https://www.cnblogs.com/Lin1031/p/14401289.
 
 代码如果已经更改过的，需要保持代码的更新，同步即可
 
-https://github.com/Lin1031/izhicheng/blob/main/image/image-20211024003427980.png
- 
-
+![](https://github.com/Lin1031/izhicheng/blob/main/image/image-20211024003427980.png)
 
 ### 参考资料
 https://blog.csdn.net/chengxun02/article/details/105187996
