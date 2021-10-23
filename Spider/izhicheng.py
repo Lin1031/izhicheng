@@ -34,7 +34,9 @@ def tianbiao(stuID):
     chrome_options.add_argument('disable-dev-shm-usage')  # 禁用-开发-SHM-使用
     chrome_options.add_argument('--disable-gpu')  # 谷歌文档提到需要加上这个属性来规避bug
     chrome_options.add_argument('no-sandbox')  # 解决DevToolsActivePort文件不存在的报错
-    driver = webdriver.Chrome(chrome_options=chrome_options,executable_path="/usr/bin/chromedriver")
+    chromedriver = "/usr/bin/chromedriver"
+    os.environ["webdriver.chrome.driver"] = chromedriver
+    driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
 
     try:
         # 表单地址
