@@ -63,3 +63,4 @@ def tianbiao(stuID):
 
 if __name__ == '__main__':
     tianbiao(stuID)
+    print("打卡成功")
