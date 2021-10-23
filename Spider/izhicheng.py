@@ -11,7 +11,7 @@ import time
 import os
 
 # 设置全局变量
-stuID = 'stuID'
+STUID = 'STUID'
 api_key = "API_KEY"
 
 # 如果检测到程序在 github actions 内运行，那么读取环境变量中的登录信息
@@ -28,7 +28,7 @@ def message(key, title):
     requests.get(msg_url)
 
 
-def tianbiao(stuID):
+def tianbiao(STUID):
     chrome_options = Options()  # 无界面对象
     chrome_options.add_argument('--headless')  # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
     chrome_options.add_argument('disable-dev-shm-usage')  # 禁用-开发-SHM-使用
@@ -40,7 +40,7 @@ def tianbiao(stuID):
 
     try:
         # 表单地址
-        url = 'http://dw10.fdzcxy.edu.cn/datawarn/ReportServer?formlet=app/sjkrb.frm&op=h5&userno=' + stuID + '#/form'
+        url = 'http://dw10.fdzcxy.edu.cn/datawarn/ReportServer?formlet=app/sjkrb.frm&op=h5&userno=' + STUID + '#/form'
         driver.get(url)  # 打开浏览器
         time.sleep(1)
 
@@ -64,5 +64,5 @@ def tianbiao(stuID):
 
 
 if __name__ == '__main__':
-    tianbiao(stuID)
-    print("打卡成功")
+    tianbiao(STUID)
+    print(STUID + "打卡成功")
