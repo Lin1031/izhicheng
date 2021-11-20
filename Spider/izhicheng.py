@@ -7,6 +7,7 @@
 import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options  # 无GUI
+from selenium.webdriver.common.action_chains import ActionChains
 import json
 import re
 import time
@@ -68,7 +69,8 @@ def tianbiao(stuID):
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
     # 确认
-    driver.find_element_by_xpath('//input[@type="checkbox"]').click()
+    checkbox = driver.find_element_by_xpath('//input[@type="checkbox"]') #.click()
+    ActionChains(driver).move_to_element(checkbox).click().perform()
     time.sleep(1)
 
     def submit_info():
@@ -76,7 +78,8 @@ def tianbiao(stuID):
         # 点击提交
         btn = driver.find_element_by_xpath('//div[@id="SUBMIT"]')
         if btn.text == "提交信息":
-            btn.click()
+            #btn.click()
+            ActionChains(driver).move_to_element(btn).click().perform()
             time.sleep(0.5)
             tip = driver.find_element_by_xpath('/html/body/div/div/div[2]/div/div/div/div[1]/div/div/div[2]')
             if tip.text  == "提交成功！":
@@ -86,7 +89,8 @@ def tianbiao(stuID):
             time.sleep(0.5)
             confirm_btn = driver.find_element_by_xpath('//*[@id="app"]/div/div[2]/div/div/div/div[2]/div/div')
             if confirm_btn.text  == "确定":
-                confirm_btn.click()
+                ActionChains(driver).move_to_element(confirm_btn).click().perform()
+                #confirm_btn.click()
             else:
                 error.append( "err:can not find confim button")
         else:
