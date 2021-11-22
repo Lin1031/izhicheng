@@ -132,10 +132,8 @@ def check_days():
         data = json.loads(json_data)['pageContent']["detail"][0]["cellData"]["rows"]
     except:
         return 'err: can not decode json data'
-    print(data[2]["cells"][6]["text"])
     days = int(data[2]["cells"][6]["text"])
-    print(type(dats))
-    print(days)
+    print(type(days))
     return days
 
 def sign_and_check(stuID):
