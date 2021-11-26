@@ -7,9 +7,13 @@
 import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options  # 无GUI
+<<<<<<< HEAD
 from selenium.webdriver.common.action_chains import ActionChains
 import json
 import re
+=======
+from webdriver_manager.chrome import ChromeDriverManager
+>>>>>>> upstream/main
 import time
 import datetime
 import os
@@ -51,8 +55,16 @@ def tianbiao(stuID):
     chrome_options.add_argument('no-sandbox')  # 解决DevToolsActivePort文件不存在的报错
     chromedriver = "/usr/bin/chromedriver"
     os.environ["webdriver.chrome.driver"] = chromedriver
+<<<<<<< HEAD
     driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
 
+=======
+    # driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+    driver = webdriver.Chrome(
+            executable_path=ChromeDriverManager().install(),
+            chrome_options=chrome_options,
+            service_args=['--ignore-ssl-errors=true', '--ssl-protocol=TLSv1'])
+>>>>>>> upstream/main
 
 
     #编程大忌之一：往try 里写业务逻辑:(
