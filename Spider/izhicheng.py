@@ -7,13 +7,10 @@
 import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options  # 无GUI
-<<<<<<< HEAD
 from selenium.webdriver.common.action_chains import ActionChains
 import json
 import re
-=======
 from webdriver_manager.chrome import ChromeDriverManager
->>>>>>> upstream/main
 import time
 import datetime
 import os
