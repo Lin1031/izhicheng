@@ -32,8 +32,8 @@ if os.environ.get('GITHUB_RUN_ID', None):
         stuIDs = os.environ.get('studentIDs',stuIDs).split(';')
         submit_time = os.environ.get('submit_time', submit_time)
         api_url = os.environ.get('api_url',api_url)
-    except:
-        print('err: environment config error')
+    except Exception,err:
+        print('err: environment config error.Info: ' , err)
     
     
 def message(key, title,content):
