@@ -163,6 +163,7 @@ def sign_and_check(stuID):
     print(stuID + title)
 
 if __name__ == '__main__':
+    print(len(stuIDs))
 
     if stuIDs != []:
         for i in range(len(stuIDs)):
