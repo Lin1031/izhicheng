@@ -33,7 +33,9 @@ if os.environ.get('GITHUB_RUN_ID', None):
             tmp_stuIDs = os.environ.get('studentIDs','').split(';')
             if "".join(tmp_stuIDs) == '':
                 stuIDs = []
-                del(tmp_stuIDs)
+            else:
+                stuIDs = tmp_stuIDs
+            del(tmp_stuIDs)
         submit_time = os.environ.get('submit_time', submit_time)
         api_url = os.environ.get('api_url',api_url)
     except Exception as err:
