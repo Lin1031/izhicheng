@@ -88,13 +88,13 @@ def tianbiao(stuID):
         if btn.text == "提交信息":
             #btn.click()
             ActionChains(driver).move_to_element(btn).click().perform()
-            time.sleep(0.5)
-            tip = driver.find_element_by_xpath('/html/body/div/div/div[2]/div/div/div/div[1]/div/div/div[2]')
+            time.sleep(2)
+            tip = driver.find_element_by_xpath('//*[@id="app"]/div/div[2]/div/div/div/div[1]/div/div/div[2]')
             if tip.text  == "提交成功！":
                 pass
             else:
                 error.append("err: %s" %  tip.text)
-            time.sleep(0.5)
+            time.sleep(2)
             confirm_btn = driver.find_element_by_xpath('//*[@id="app"]/div/div[2]/div/div/div/div[2]/div/div')
             if confirm_btn.text  == "确定":
                 ActionChains(driver).move_to_element(confirm_btn).click().perform()
