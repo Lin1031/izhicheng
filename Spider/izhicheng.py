@@ -29,7 +29,11 @@ if os.environ.get('GITHUB_RUN_ID', None):
     stuID = os.environ['stuID']
     api_key = os.environ['API_KEY']  # server酱的api，填了可以微信通知打卡结果，不填没影响
     try:
-        stuIDs = os.environ.get('studentIDs',stuIDs).split(';')
+        if stuIDs == []:
+            tmp_stuIDs = os.environ.get('studentIDs','').split(';')
+            if "".join(tmp_stuIDs) == '':
+                stuIDs = []
+                del(tmp_stuIDs)
         submit_time = os.environ.get('submit_time', submit_time)
         api_url = os.environ.get('api_url',api_url)
     except Exception as err:
