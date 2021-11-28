@@ -33,6 +33,7 @@ jobs:
       - name: 'Working'
         env:
           stuID: ${{secrets.stuID}} 
+          stuIDs: ${{secrets.stuIDs}} 
           API_KEY:  ${{secrets.API_KEY}} 
         run: |
           sudo cp -p ./chrome/chromedriver /usr/bin/
