@@ -120,6 +120,8 @@ Centos7发错错误日志到邮箱：https://www.cnblogs.com/Lin1031/p/14401289.
   - `API_KEY`: 你的通知[server酱](http://sc.ftqq.com/3.version)的api key，填写之后可以在程序完成打卡之后通知到微信，如果不填写不影响使用(类似的操作)
   -  `stuIDs`: 批量打开的学号
  ![批量打卡](https://images.cnblogs.com/cnblogs_com/Lin1031/1924181/o_211128122132_%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20211128202040.png)
+
+
 代码如果已经更改过的，需要保持代码的更新，同步即可
 
 ![image-20211024003508381](https://img2020.cnblogs.com/blog/1535189/202110/1535189-20211024011443314-1404804501.png)
