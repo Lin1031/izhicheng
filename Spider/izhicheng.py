@@ -30,7 +30,7 @@ if os.environ.get('GITHUB_RUN_ID', None):
     api_key = os.environ['API_KEY']  # server酱的api，填了可以微信通知打卡结果，不填没影响
     try:
         if stuIDs == []:
-            tmp_stuIDs = os.environ.get('studentIDs','').split(';')
+            tmp_stuIDs = os.environ.get('studentIDs','').split('\n')
             if "".join(tmp_stuIDs) == '':
                 stuIDs = []
             else:
@@ -160,7 +160,7 @@ def sign_and_check(stuID):
     else:
         title = "打卡成功"
     message(api_key, title , content )
-    print(stuID + title)
+    print(title)
 
 if __name__ == '__main__':
     print(len(stuIDs))
