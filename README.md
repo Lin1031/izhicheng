@@ -8,7 +8,7 @@
 
 ### 出现 bug 请在 issue 提交问题
 ```
-2022.01.12 更新：关闭多余的连接，建议更改 .github/workflows/main.yml 中的 schedule 时间设置，避免过的人使用导致打卡失败
+2022.01.12 更新：关闭多余的连接，建议更改 .github/workflows/main.yml 中的 schedule 时间设置，避免过多人使用导致打卡失败
 2021.11.28 更新：感谢 @miscdec 的帮助，实现在 GitHub Action 上的学号的批量打卡
 2021.11.26 更新：修复 chrome 版本更新导致失效，使用 webdriver 自动更新一劳永逸 
 2021.11.16 更新：感谢 @R-YaTian 的帮助，可以在顺利在凌晨进行打卡
