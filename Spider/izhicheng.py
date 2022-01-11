@@ -131,6 +131,7 @@ def tianbiao(stuID):
 
 
 def check_days():
+    requests.session().keep_alive = False
     url='http://dw10.fdzcxy.edu.cn/datawarn/decision/view/report?viewlet=%252Fapp%252Fdkxq.cpt&__pi__=true&op=h5&xh='+ stuID+'&userno='+ stuID+'#/report'
     infoPage_data = requests.get(url)
     pattern = re.compile(r'[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}')
