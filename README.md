@@ -50,7 +50,7 @@ i至诚疫情防控每日填报助手，用于解决忘记填写每日打卡的�
 
 
 # 方法一： 使用自己的服务器运行
-**使用步骤（点这里！！！具体步骤截图）**
+**[使用步骤（点这里！！！具体步骤截图）**](https://github.com/Lin1031/izhicheng/blob/main/README/README_YUN.md)
 
 
 
@@ -59,7 +59,7 @@ i至诚疫情防控每日填报助手，用于解决忘记填写每日打卡的�
 
 Github提供了一个secret功能，用于存储密钥等敏感信息，请按照以下步骤操作。
 
-**步骤截图** （点这里！！！具体截图）
+[**步骤截图** （点这里！！！具体截图）](https://github.com/Lin1031/izhicheng/blob/main/README/README_GA.md)
 
 **使用步骤:**
 
