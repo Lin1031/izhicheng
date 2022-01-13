@@ -16,6 +16,7 @@ import datetime
 from selenium.webdriver.common.action_chains import ActionChains
 
 # 设置全局变量
+stuID = 'stuID'
 stuIDs = []
 stuIDsHome = []
 api_key = "API_KEY"

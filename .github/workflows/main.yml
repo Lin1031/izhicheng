@@ -32,6 +32,7 @@ jobs:
         run: pip install -r ./Spider/requirements.txt
       - name: 'Working'
         env:
+          stuID: ${{secrets.stuID}}
           # 在校输入此
           stuIDs: ${{secrets.stuIDs}}
           # 在家输入此
