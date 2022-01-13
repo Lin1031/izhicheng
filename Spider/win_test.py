@@ -66,19 +66,7 @@ class AtSchool():
         self.stuID = stuID
 
     def tianbiao(stuID):
-        chrome_options = Options()  # 无界面对象
-        chrome_options.add_argument('--headless')  # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
-        chrome_options.add_argument('disable-dev-shm-usage')  # 禁用-开发-SHM-使用
-        chrome_options.add_argument('--disable-gpu')  # 谷歌文档提到需要加上这个属性来规避bug
-        chrome_options.add_argument('no-sandbox')  # 解决DevToolsActivePort文件不存在的报错
-        chromedriver = "/usr/bin/chromedriver"
-        os.environ["webdriver.chrome.driver"] = chromedriver
-        # driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
-        # driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
-        driver = webdriver.Chrome(
-            executable_path=ChromeDriverManager().install(),
-            options=chrome_options,
-            service_args=['--ignore-ssl-errors=true', '--ssl-protocol=TLSv1'])
+        driver = webdriver.Chrome()
 
         # 表单地址
         url = 'http://dw10.fdzcxy.edu.cn/datawarn/ReportServer?formlet=app/sjkrb.frm&op=h5&userno=' + str(
@@ -161,19 +149,7 @@ class AtHome():
         self.region = region
 
     def tianbiao(stuID, province, city, region):
-        chrome_options = Options()  # 无界面对象
-        chrome_options.add_argument('--headless')  # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
-        chrome_options.add_argument('disable-dev-shm-usage')  # 禁用-开发-SHM-使用
-        chrome_options.add_argument('--disable-gpu')  # 谷歌文档提到需要加上这个属性来规避bug
-        chrome_options.add_argument('no-sandbox')  # 解决DevToolsActivePort文件不存在的报错
-        chromedriver = "/usr/bin/chromedriver"
-        os.environ["webdriver.chrome.driver"] = chromedriver
-        # driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
-        # driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
-        driver = webdriver.Chrome(
-            executable_path=ChromeDriverManager().install(),
-            options=chrome_options,
-            service_args=['--ignore-ssl-errors=true', '--ssl-protocol=TLSv1'])
+        driver = webdriver.Chrome()
 
         # 表单地址
         url = 'http://dw10.fdzcxy.edu.cn/datawarn/ReportServer?formlet=app/sjkrb.frm&op=h5&userno=' + str(

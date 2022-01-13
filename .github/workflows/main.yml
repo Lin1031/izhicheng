@@ -27,14 +27,21 @@ jobs:
       - name: 'Set up Python'
         uses: actions/setup-python@v1
         with:
-           python-version: 3.7
+          python-version: 3.7
       - name: 'Install requirements'
         run: pip install -r ./Spider/requirements.txt
       - name: 'Working'
         env:
-          stuID: ${{secrets.stuID}} 
-          stuIDs: ${{secrets.stuIDs}} 
-          API_KEY:  ${{secrets.API_KEY}} 
+          # 在校输入此
+          stuIDs: ${{secrets.stuIDs}}
+          # 在家输入此
+          stuIDsHome: ${{secrets.stuIDsHome}}
+          # 微信公众号打卡提示
+          API_KEY: ${{secrets.API_KEY}}
+          # 是否需要检查打卡成功 默认为 NO(不检查)，需要检查使用YES
+          check: ${{secrets.check}}
+          # 是否在家 默认为 NO(在校)，在家使用YES
+          atHome: ${{secrets.atHome}}
         run: |
           sudo cp -p ./chrome/chromedriver /usr/bin/
           chmod -R 777 /usr/bin/chromedriver
