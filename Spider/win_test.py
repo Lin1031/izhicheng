@@ -27,6 +27,7 @@ atHome = 'NO'
 
 # 如果检测到程序在 github actions 内运行，那么读取环境变量中的登录信息
 if os.environ.get('GITHUB_RUN_ID', None):
+    stuID = os.environ['stuID']
     api_key = os.environ['API_KEY']  # server酱的api，填了可以微信通知打卡结果，不填没影响
     check = os.environ['check']
     atHome = os.environ['atHome']
