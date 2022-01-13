@@ -276,6 +276,7 @@ def check_days():
     # 初始化日期，用于后续检测学号是否存在
     days = -1
     # 检测是否打卡成功链接
+    requests.session().keep_alive = False
     url = 'http://dw10.fdzcxy.edu.cn/datawarn/decision/view/report?viewlet=%252Fapp%252Fdkxq.cpt&__pi__=true&op=h5&xh=' + stuID + '&userno=' + stuID + '#/report'
     infoPage_data = requests.get(url)
     # 正则表达式获取uuid
