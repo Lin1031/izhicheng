@@ -27,7 +27,6 @@ atHome = 'NO'
 
 # 如果检测到程序在 github actions 内运行，那么读取环境变量中的登录信息
 if os.environ.get('GITHUB_RUN_ID', None):
-    stuID = os.environ['stuID']
     api_key = os.environ['API_KEY']  # server酱的api，填了可以微信通知打卡结果，不填没影响
     check = os.environ['check']
     atHome = os.environ['atHome']
@@ -46,10 +45,10 @@ if os.environ.get('GITHUB_RUN_ID', None):
             else:
                 stuIDsHome = tmp_stuIDsHome
             del tmp_stuIDsHome
-    submit_time = os.environ.get('submit_time', submit_time)
-    api_url = os.environ.get('api_url', api_url)
-except Exception as err:
-print('err: environment config error.Info: ', err.args)
+        submit_time = os.environ.get('submit_time', submit_time)
+        api_url = os.environ.get('api_url', api_url)
+    except Exception as err:
+        print('err: environment config error.Info: ', err.args)
 
 
 def message(key, title, content):
