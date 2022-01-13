@@ -143,7 +143,7 @@ class AtSchool():
         content = AtSchool.tianbiao(stuID)
         days_after = check_days()
         # 打卡前日期与打开后日期对比
-        if days_after != days_before + 1:
+        if days_before == -1:
             title = stuID[-3:] + "学号不存在"
         elif days_after != days_before + 1:
             title = stuID[-3:] + "疑似打卡失败"
