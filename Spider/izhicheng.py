@@ -41,11 +41,11 @@ if os.environ.get('GITHUB_RUN_ID', None):
             del tmp_stuIDs
         if not stuIDsHome:
             tmp_stuIDsHome = os.environ.get('stuIDsHome', '').split('\n')
-            if "".join(stuIDsHome) == '':
-                stuIDs = []
+            if "".join(tmp_stuIDsHome) == '':
+                stuIDsHome = []
             else:
-                stuIDs = stuIDsHome
-            del stuIDsHome
+                stuIDsHome = tmp_stuIDsHome
+            del tmp_stuIDsHome
         submit_time = os.environ.get('submit_time', submit_time)
         api_url = os.environ.get('api_url', api_url)
     except Exception as err:

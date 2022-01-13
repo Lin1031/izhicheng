@@ -32,24 +32,24 @@ if os.environ.get('GITHUB_RUN_ID', None):
     check = os.environ['check']
     atHome = os.environ['atHome']
     try:
-        if stuIDs == []:
+        if not stuIDs:
             tmp_stuIDs = os.environ.get('stuIDs', '').split('\n')
             if "".join(tmp_stuIDs) == '':
                 stuIDs = []
             else:
                 stuIDs = tmp_stuIDs
-            del (tmp_stuIDs)
-        if stuIDsHome == []:
+            del tmp_stuIDs
+        if not stuIDsHome:
             tmp_stuIDsHome = os.environ.get('stuIDsHome', '').split('\n')
-            if "".join(stuIDsHome) == '':
-                stuIDs = []
+            if "".join(tmp_stuIDsHome) == '':
+                stuIDsHome = []
             else:
-                stuIDs = stuIDsHome
-            del (stuIDsHome)
-        submit_time = os.environ.get('submit_time', submit_time)
-        api_url = os.environ.get('api_url', api_url)
-    except Exception as err:
-        print('err: environment config error.Info: ', err.args)
+                stuIDsHome = tmp_stuIDsHome
+            del tmp_stuIDsHome
+    submit_time = os.environ.get('submit_time', submit_time)
+    api_url = os.environ.get('api_url', api_url)
+except Exception as err:
+print('err: environment config error.Info: ', err.args)
 
 
 def message(key, title, content):
