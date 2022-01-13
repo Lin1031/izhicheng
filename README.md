@@ -50,7 +50,7 @@ i至诚疫情防控每日填报助手，用于解决忘记填写每日打卡的�
 
 
 # 方法一： 使用自己的服务器运行
-**[使用步骤（点这里！！！具体步骤截图）](https://github.com/Lin1031/izhicheng/blob/main/README/README_YUN.md)**
+**[使用步骤（点这里！！！具体步骤截图）](https://github.com/Lin1031/izhicheng/blob/main/README/README_yun.md)**
 
 
 
