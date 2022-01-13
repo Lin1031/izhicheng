@@ -1,14 +1,35 @@
 # i至诚自动化打卡
 
-## 源码开源，仅用于学习
+i至诚疫情防控每日填报助手，用于解决忘记填写每日打卡的问题。
 
-## ``` 建议更改 .github/workflows/main.yml 中的 schedule 时间设置，避免过的人使用导致打卡失败```
 
-### window自动定时使用 Windows 任务调度程序，可以自行百度
 
-### 出现 bug 请在 issue 提交问题
+# 注意
+
+本人不对因为滥用此程序造成的后果负责，**请在合理且合法的范围内使用本程序**。
+
+**本程序仅用于解决忘记打卡这一问题，如果填报表中任意情况发生变化，比如地点发生变化，处在居家隔离阶段等情况，请务必在程序运行之前手动打卡。由于各种已知的或未知的原因可能造成打卡信息不一定总是准确的，请经常人工查看企业微信里面的填报表信息是否正确**
+
+
+
+打卡网站可能会经常更新，因此代码会做更改。*如果在使用过程中遇到问题或者发现 bug，可以提 issue*，代码更新也会在此处通知。
+如果想要即时得知代码的更新请 watch 本仓库。
+
+
+
+有特殊需求的同学可以修改本代码。
+
+
+
+# 更新
+
 ```
-2022.01.12 更新：关闭多余的连接，建议更改 .github/workflows/main.yml 中的 schedule 时间设置，避免过多人使用导致打卡失败
+2022.01.13 更新：代码检查可选择，避免过多人使用代码程序报错
+           更新：可以设置省份，使用家庭地址（虽然没啥用）
+           修复：学号不存在报错问题
+           更新：修改 README.md
+           更修：修改打卡时间，北京时间凌晨3点5点7点进行打卡
+2022.01.12 更新：关闭多余的连接
 2021.11.28 更新：感谢 @miscdec 的帮助，实现在 GitHub Action 上的学号的批量打卡
 2021.11.26 更新：修复 chrome 版本更新导致失效，使用 webdriver 自动更新一劳永逸 
 2021.11.16 更新：感谢 @R-YaTian 的帮助，可以在顺利在凌晨进行打卡
@@ -26,112 +47,38 @@
 2021.02.13 更新：增加了windows版并修复了BUG
 ```
 
-### 零、环境准备
-
-centos7云服务准备：https://developer.aliyun.com/adc/student/
-
-环境准备：https://www.cnblogs.com/Lin1031/p/14187135.html
-
-博客园地址：https://www.cnblogs.com/Lin1031/p/14187137.html
 
 
-### 一、在根目录下新建一个py文件
-```
-cd
-touch tianbiao.py
-vim tianbiao.py
-```
-### 二、编辑python程序(注意，要修改path地址为本地，driverchrome路径)
+# 方法一： 使用自己的服务器运行
+**使用步骤（点这里！！！具体步骤截图）**
 
 
-#### 开源不易，希望GitHub给个star
-#### GitHub地址：https://github.com/Lin1031/izhicheng
 
+# 方法二： 使用 GitHub Actions（推荐使用）
+没有服务器的同学可以使用 GitHub Action 来进行运行此程序。
 
-### 三、在根目录下创建一个脚本
-```
-cd 
-touch my.sh
-vim my.sh
-```
-### 四、编辑脚本内容（路径修改为本地py文件路径，学号处修改为自己的学号）
-```
-#!/bin/bash
-. /etc/profile
-. ~/.bash_profile
-python的绝对路径 /root/tianbiao.py 学号 省份 市 区（主要要和i至诚上面一模一样）
-```
-![](https://img2020.cnblogs.com/blog/1535189/202101/1535189-20210126182455451-1926330943.png)
-```
-whereis python3
-```
-![](https://img2020.cnblogs.com/blog/1535189/202012/1535189-20201225110258857-1147785979.png)
+Github提供了一个secret功能，用于存储密钥等敏感信息，请按照以下步骤操作。
 
-### 五、编辑python自启动
-```
-sudo vim /etc/crontab
-```
-![](https://img2020.cnblogs.com/blog/1535189/202012/1535189-20201225024612136-319055669.png)
-```
-crontab -e
-```
-crontab可能不能运行，因此在这里再次添加定时
-![](https://img2020.cnblogs.com/blog/1535189/202012/1535189-20201225110424469-118105501.png)
+**步骤截图** （点这里！！！具体截图）
 
+**使用步骤:**
 
-### 六、修改my.sh的权限为777
-```
-cd 
-sudo chmod -R 777 /root/my.sh
-```
-
-### 七、发送错误日志到邮箱
-Centos7发错错误日志到邮箱：https://www.cnblogs.com/Lin1031/p/14401289.html#/c/subject/p/14401289.html
-配置好环境之后，使用 empty.sh 脚本，在 shell 里设置自动启动的时间，如果之前的填报脚本出现错误日志，则会发送邮件。
-注意：使用时，需要将 tiaobiao.py 最后一行输出注释掉。一般自动启动时间建议在设置自动填报时间之后的一小时。
-
-### 八、批量填报
-编写一个 sno.txt 文件，其内容为学号 省 市 区，使用 my.sh 脚本，进行批量读文件。
-注意：sno.txt 中 学号为一行一个人，最后一行不能有空行。若使用批量填报，则定时则设置为该脚本。
-
-### 九、无服务器使用（无脑，推荐）
-
-### 使用 GitHub Actions（流程很简单 只要加个学号就行）
-
-经过测试，大概在凌晨一点半的时候打卡成功
-
-使用步骤:
-
-- 点击右上角 `star` :)![image-20211023223415973](https://img2020.cnblogs.com/blog/1535189/202110/1535189-20211024011444420-1054435861.png)
-
+- 点击右上角 `star` :)
 - 克隆这个仓库到你名下
-
-- ![image-20211023223437524](https://img2020.cnblogs.com/blog/1535189/202110/1535189-20211024011444220-574369804.png)
-
-- 第一次使用需要确认
-
-![屏幕截图 2021-10-24 012114](https://img2020.cnblogs.com/blog/1535189/202110/1535189-20211024012336869-1205037702.png)
-
-![image-20211024012249533](https://img2020.cnblogs.com/blog/1535189/202110/1535189-20211024012336425-986933813.png)
-
+- fork的仓库默认禁用了`workflow`，需要手动打开：点击 `actions`选项卡，点击`I understand my workflows, go ahead and run them`。
 - 在仓库设置里面, 设置 secrets 如下
+  - `stuIDs`: 你（们）的学号
+  - `stuIDsHome`:在家设置（学号 省份 市 区），若使用一定要输入和 i至诚 上一模一样
+  - `atHome`: 默认在校即鼓楼区，若使用 输入 YES（注意大小写）
+  - `check`:是否需要检查是否打卡成功，默认不检查，若使用 输入 YES
+  - server酱通知设置（需要server酱通知时设置 可选）：
+    - `API_KEY`: 你的通知[server酱](http://sc.ftqq.com/3.version)的api key，填写之后可以在程序完成打卡之后通知到微信，如果不填写不影响使用
+- 测试actions是否可以正常工作
+  
 
-  - `stuID`: 你的学号
+完成之后, 每天 北京时间 3点5点7点 自动触发 github actions 进行填报 。
 
-    ![image-20211024004751004](https://img2020.cnblogs.com/blog/1535189/202110/1535189-20211024011443749-1912034824.png)
+## 建议：
 
-  - `API_KEY`: 你的通知[server酱](http://sc.ftqq.com/3.version)的api key，填写之后可以在程序完成打卡之后通知到微信，如果不填写不影响使用(类似的操作)
-  -  `stuIDs`: 批量打卡的学号
- ![批量打卡](https://images.cnblogs.com/cnblogs_com/Lin1031/1924181/o_211128122132_%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20211128202040.png)
+建议更改` .github/workflows/main.yml `中的 schedule 时间设置，避免过的人使用导致打卡失败
 
-
-代码如果已经更改过的，需要保持代码的更新，同步即可
-
-![image-20211024003508381](https://img2020.cnblogs.com/blog/1535189/202110/1535189-20211024011443314-1404804501.png)
-
-### 参考资料
-https://blog.csdn.net/chengxun02/article/details/105187996
-
-https://blog.csdn.net/a12355556/article/details/112163669
-
-https://github.com/IanSmith123/ucas-covid19
