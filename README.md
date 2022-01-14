@@ -83,6 +83,7 @@ Github提供了一个secret功能，用于存储密钥等敏感信息，请按�
 建议更改` .github/workflows/main.yml `中的 schedule 时间设置，避免过的人使用导致打卡失败
 
 # 方法三： 使用 GitHub Actions（request）
+此方法不能更改地区！！只能默认鼓楼（因为其他地区用的是地区六位编码不好改）
 
 **[步骤截图 （点这里！！！具体截图）](https://github.com/Lin1031/izhicheng/blob/main/README/README_RE.md)**
 
