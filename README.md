@@ -93,7 +93,7 @@ Github提供了一个secret功能，用于存储密钥等敏感信息，请按�
 - 克隆这个仓库到你名下
 - fork的仓库默认禁用了`workflow`，需要手动打开：点击 `actions`选项卡，点击`I understand my workflows, go ahead and run them`。
 - 在仓库设置里面, 设置 secrets 如下
-  - `stuIDs`: 学号 姓名
+  - `students`: 学号 姓名
   - server酱通知设置（需要server酱通知时设置 可选）：
     - `API_KEY`: 你的通知[server酱](http://sc.ftqq.com/3.version)的api key，填写之后可以在程序完成打卡之后通知到微信，如果不填写不影响使用
 - 测试actions是否可以正常工作、
