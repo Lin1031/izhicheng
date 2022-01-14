@@ -101,8 +101,10 @@ def main(stuID, name):
     try:
         res = requests.post(url=url, data=data, headers=headers)
         if res.text:
+            message(api_key, stuID[-3:] + "打卡成功", stuID[-3:] + "打卡成功")
             return print(stuID[-3:] + "打卡成功")
     except:
+        message(api_key, stuID[-3:] + "打卡失败", stuID[-3:] + "打卡失败")
         return print(stuID[-3:] + "打卡失败")
 
 
