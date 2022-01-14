@@ -24,6 +24,7 @@ i至诚疫情防控每日填报助手，用于解决忘记填写每日打卡的�
 # 更新
 
 ```
+2022.01.14 更新：增加 request 填报，两秒一个学号（方法三）
 2022.01.13 更新：代码检查可选择，避免过多人使用代码程序报错
            更新：可以设置省份，使用家庭地址（虽然没啥用）
            修复：学号不存在报错问题
@@ -74,7 +75,6 @@ Github提供了一个secret功能，用于存储密钥等敏感信息，请按�
   - server酱通知设置（需要server酱通知时设置 可选）：
     - `API_KEY`: 你的通知[server酱](http://sc.ftqq.com/3.version)的api key，填写之后可以在程序完成打卡之后通知到微信，如果不填写不影响使用
 - 测试actions是否可以正常工作
-  
 
 完成之后, 每天 北京时间 3点5点7点 自动触发 github actions 进行填报 。
 
@@ -82,3 +82,22 @@ Github提供了一个secret功能，用于存储密钥等敏感信息，请按�
 
 建议更改` .github/workflows/main.yml `中的 schedule 时间设置，避免过的人使用导致打卡失败
 
+# 方法三： 使用 GitHub Actions（request）
+
+**[步骤截图 （点这里！！！具体截图）](https://github.com/Lin1031/izhicheng/blob/main/README/README_RE.md)**
+
+**使用步骤:**
+
+- 点击右上角 `star` :)
+- 克隆这个仓库到你名下
+- fork的仓库默认禁用了`workflow`，需要手动打开：点击 `actions`选项卡，点击`I understand my workflows, go ahead and run them`。
+- 在仓库设置里面, 设置 secrets 如下
+  - `stuIDs`: 学号 姓名
+  - server酱通知设置（需要server酱通知时设置 可选）：
+    - `API_KEY`: 你的通知[server酱](http://sc.ftqq.com/3.version)的api key，填写之后可以在程序完成打卡之后通知到微信，如果不填写不影响使用
+- 测试actions是否可以正常工作、
+
+完成之后, 每天 北京时间 3点5点7点 自动触发 github actions 进行填报 。
+
+## 参考项目
+https://blog.zimo.wiki/posts/5a29fa14/

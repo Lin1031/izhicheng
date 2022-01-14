@@ -1,0 +1,40 @@
+name: request
+
+# Controls when the action will run.
+on:
+  schedule:
+    - cron: '00 19,21,23 * * *'
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Set-timezone
+      - name: Set time zone
+        run: sudo timedatectl set-timezone 'Asia/Shanghai'
+
+      # Runs a single command using the runners shell
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: 'Install requirements'
+        run: pip install -r ./request/requirements.txt
+      - name: 'Working'
+        env:
+          students: ${{secrets.students}}
+          API_KEY: ${{secrets.API_KEY}}
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytz requests datetime
+          python ./request/izhicheng.py
