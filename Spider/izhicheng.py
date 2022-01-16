@@ -16,13 +16,11 @@ import datetime
 from selenium.webdriver.common.action_chains import ActionChains
 
 # 设置全局变量
-stuIDs = []
-stuIDsHome = []
+students = []
 api_key = "API_KEY"
 api_url = "https://sctapi.ftqq.com/"  # serverChan 不支持完整的markdown语法且每日请求次数极其有限，请考虑用其他push robot代替，也许这就是高性能的代价（雾
 submit_time = 3
 check = 'NO'
-atHome = 'NO'
 
 # 如果检测到程序在 github actions 内运行，那么读取环境变量中的登录信息
 if os.environ.get('GITHUB_RUN_ID', None):
@@ -30,21 +28,13 @@ if os.environ.get('GITHUB_RUN_ID', None):
     check = os.environ['check']
     atHome = os.environ['atHome']
     try:
-        if not stuIDs:
-            tmp_stuIDs = os.environ.get('stuIDs', '').split('\n')
-            if "".join(tmp_stuIDs) == '':
-                stuIDs = []
+        if not students:
+            tmp_students = os.environ.get('students', '').split('\n')
+            if "".join(tmp_students) == '':
+                students = []
             else:
-                stuIDs = tmp_stuIDs
-            del tmp_stuIDs
-        if not stuIDsHome:
-            tmp_stuIDsHome = os.environ.get('stuIDsHome', '').split('\n')
-            if "".join(tmp_stuIDsHome) == '':
-                stuIDsHome = []
-            else:
-                stuIDsHome = tmp_stuIDsHome
-            del tmp_stuIDsHome
-        submit_time = os.environ.get('submit_time', submit_time)
+                students = tmp_students
+            del tmp_students
         api_url = os.environ.get('api_url', api_url)
     except Exception as err:
         print('err: environment config error.Info: ', err.args)
@@ -72,8 +62,6 @@ class AtSchool():
         chrome_options.add_argument('no-sandbox')  # 解决DevToolsActivePort文件不存在的报错
         chromedriver = "/usr/bin/chromedriver"
         os.environ["webdriver.chrome.driver"] = chromedriver
-        # driver = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
-        # driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
         driver = webdriver.Chrome(
             executable_path=ChromeDriverManager().install(),
             options=chrome_options,
@@ -143,11 +131,11 @@ class AtSchool():
         days_after = check_days()
         # 打卡前日期与打开后日期对比
         if days_before == -1:
-            title = stuID[-3:] + "学号不存在"
+            title = stuID[-3:] + " 学号不存在"
         elif days_after != days_before + 1:
-            title = stuID[-3:] + "疑似打卡失败"
+            title = stuID[-3:] + " 疑似打卡失败"
         else:
-            title = stuID[-3:] + "打卡成功"
+            title = stuID[-3:] + " 打卡成功"
         message(api_key, title, content)
         print(title)
 
@@ -262,11 +250,11 @@ class AtHome():
         days_after = check_days()
         # 打卡前日期与打开后日期对比
         if days_before == -1:
-            title = stuID[-3:] + "学号不存在"
+            title = stuID[-3:] + " 学号不存在"
         elif days_after != days_before + 1:
-            title = stuID[-3:] + "疑似打卡失败"
+            title = stuID[-3:] + " 疑似打卡失败"
         else:
-            title = stuID[-3:] + "打卡成功"
+            title = stuID[-3:] + " 打卡成功"
         message(api_key, title, content)
         print(title)
 
@@ -301,39 +289,28 @@ def check_days():
 
 
 if __name__ == '__main__':
-    if atHome == 'YES':
-        if check == 'YES':
-            print('共有 ' + str(len(stuIDsHome)) + ' 人等待打卡')
-            for i in range(len(stuIDsHome)):
-                list_temp = stuIDsHome[i].split(' ')
-                stuID = list_temp[0]
-                province = list_temp[1]
-                city = list_temp[2]
-                region = list_temp[3]
+    print('共有 ' + str(len(students)) + ' 人等待打卡')
+    for i in range(len(students)):
+        list_temp = students[i].split(' ')
+        stuID = list_temp[0]
+        if len(list_temp) > 1:
+            province = list_temp[1]
+            city = list_temp[2]
+            region = list_temp[3]
+            if check == 'YES':
                 AtHome.sign_and_check(stuID, province, city, region)
+                print(stuID[-3:] + ' 打卡完成')
                 del (stuID)
-        else:
-            print('共有 ' + str(len(stuIDsHome)) + ' 人等待打卡')
-            for i in range(len(stuIDsHome)):
-                list_temp = stuIDsHome[i].split(' ')
-                stuID = list_temp[0]
-                province = list_temp[1]
-                city = list_temp[2]
-                region = list_temp[3]
+            else:
                 AtHome.tianbiao(stuID, province, city, region)
                 print(stuID[-3:] + ' 打卡完成')
                 del (stuID)
-    else:
-        if check == 'YES':
-            print('共有 ' + str(len(stuIDs)) + ' 人等待打卡')
-            for i in range(len(stuIDs)):
-                stuID = stuIDs[i]
-                AtSchool.sign_and_check(stuID)
-                del (stuID)
         else:
-            print('共有 ' + str(len(stuIDs)) + ' 人等待打卡')
-            for i in range(len(stuIDs)):
-                stuID = stuIDs[i]
+            if check == 'YES':
+                AtSchool.sign_and_check(stuID)
+                print(stuID[-3:] + ' 打卡完成')
+                del (stuID)
+            else:
                 AtSchool.tianbiao(stuID)
                 print(stuID[-3:] + ' 打卡完成')
                 del (stuID)
