@@ -32,11 +32,9 @@ jobs:
         run: pip install -r ./Spider/requirements.txt
       - name: 'Working'
         env:
-          stuIDs: ${{secrets.stuIDs}}
-          stuIDsHome: ${{secrets.stuIDsHome}}
+          students: ${{secrets.students}}
           API_KEY: ${{secrets.API_KEY}}
           check: ${{secrets.check}}
-          atHome: ${{secrets.atHome}}
         run: |
           sudo cp -p ./chrome/chromedriver /usr/bin/
           chmod -R 777 /usr/bin/chromedriver
