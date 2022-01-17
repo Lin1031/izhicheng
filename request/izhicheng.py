@@ -106,7 +106,7 @@ if __name__ == '__main__':
     for i in range(len(students)):
         list_temp = students[i].split(' ')
         stuID = list_temp[0]
-        if len(list_temp) > 1:
+        if len(list_temp) == 4:
             province = list_temp[1]
             city = list_temp[2]
             region = list_temp[3]
