@@ -14,7 +14,7 @@
 
 - 在仓库设置里面, 设置 secrets 如下
 
-  **最简单就是只设置 stuIDs 就能用了！！** 
+  **最简单就是只设置 students 就能用了！！** 
 
   - `API_KEY`: 你的通知[server酱](http://sc.ftqq.com/3.version)的api key，填写之后可以在程序完成打卡之后通知到微信，如果不填写不影响使用(类似的操作)
 
