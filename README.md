@@ -54,7 +54,7 @@ i至诚疫情防控每日填报助手，用于解决忘记填写每日打卡的�
 
 
 # GitHub Actions 使用视频
-**[使用步骤视频（点这里！！！）](https://www.lin1031.cn/Warehouse/izhicheng.mp4)**
+**[使用步骤视频（点这里！！！）](https://www.bilibili.com/video/BV1NZ4y1a7He/)**
 
 
 
