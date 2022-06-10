@@ -21,6 +21,7 @@ api_key = "API_KEY"
 api_url = "https://sctapi.ftqq.com/"  # serverChan 不支持完整的markdown语法且每日请求次数极其有限，请考虑用其他push robot代替，也许这就是高性能的代价（雾
 submit_time = 3
 check = 'NO'
+MAX_TRY = 20  # 最大重试次数
 
 # 如果检测到程序在 github actions 内运行，那么读取环境变量中的登录信息
 if os.environ.get('GITHUB_RUN_ID', None):
@@ -291,6 +292,7 @@ def check_days():
 if __name__ == '__main__':
     print('共有 ' + str(len(students)) + ' 人等待打卡')
     for i in range(len(students)):
+        has_try = 0  # 尝试次数
         list_temp = students[i].split(' ')
         stuID = list_temp[0]
         if len(list_temp) == 4:
@@ -298,20 +300,48 @@ if __name__ == '__main__':
             city = list_temp[2]
             region = list_temp[3]
             if check == 'YES':
-                AtHome.sign_and_check(stuID, province, city, region)
-                print(stuID[-3:] + ' 打卡完成')
+                while has_try < MAX_TRY:
+                    try:
+                        AtHome.sign_and_check(stuID, province, city, region)
+                        print(stuID[-3:] + ' 打卡完成')
+                        break
+                    except:
+                        has_try += 1
+                        time.sleep(10)
+                        print("重试次数" + str(has_try))
                 del (stuID)
             else:
-                AtHome.tianbiao(stuID, province, city, region)
-                print(stuID[-3:] + ' 打卡完成')
-                del (stuID)
+                while has_try < MAX_TRY:
+                    try:
+                        AtHome.tianbiao(stuID, province, city, region)
+                        print(stuID[-3:] + ' 打卡完成')
+                        break
+                    except:
+                        has_try += 1
+                        time.sleep(10)
+                        print("重试次数" + str(has_try))
+            del (stuID)
         else:
             if check == 'YES':
-                AtSchool.sign_and_check(stuID)
-                print(stuID[-3:] + ' 打卡完成')
+                while has_try < MAX_TRY:
+                    try:
+                        AtSchool.sign_and_check(stuID)
+                        print(stuID[-3:] + ' 打卡完成')
+                        break
+                    except:
+                        has_try += 1
+                        time.sleep(10)
+                        print("重试次数" + str(has_try))
                 del (stuID)
             else:
-                AtSchool.tianbiao(stuID)
-                print(stuID[-3:] + ' 打卡完成')
+                while has_try < MAX_TRY:
+                    try:
+                        AtSchool.tianbiao(stuID)
+                        print(stuID[-3:] + ' 打卡完成')
+                        break
+                    except:
+                        has_try += 1
+                        time.sleep(10)
+                        print("重试次数" + str(has_try))
                 del (stuID)
     print("打卡任务全部完成！")
