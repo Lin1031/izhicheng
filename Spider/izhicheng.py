@@ -55,6 +55,7 @@ class AtSchool():
 
     def tianbiao(stuID):
         chrome_options = Options()  # 无界面对象
+        chrome_options.add_argument("user-agent=Mozilla/5.0 (Linux; Android 12; M2012K11AC Build/SKQ1.211006.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/89.0.4389.72 MQQBrowser/6.2 TBS/046010 Mobile Safari/537.36 SuperApp")
         chrome_options.add_argument('--headless')  # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
         chrome_options.add_argument('disable-dev-shm-usage')  # 禁用-开发-SHM-使用
         chrome_options.add_argument('--disable-gpu')  # 谷歌文档提到需要加上这个属性来规避bug
