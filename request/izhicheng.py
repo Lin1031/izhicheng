@@ -11,6 +11,7 @@ import requests
 students = []
 api_key = "API_KEY"
 api_url = "https://sctapi.ftqq.com/"
+MAX_TRY = 5  # 最大重试次数
 
 
 # 如果检测到程序在 github actions 内运行，那么读取环境变量中的登录信息
@@ -115,7 +116,17 @@ if __name__ == '__main__':
             province = "福建省"
             city = "福州市"
             region = "鼓楼区"
-        main(stuID, province, city, region)
-        del (stuID)
-        time.sleep(2)
+
+        has_try = 0  # 尝试次数
+
+        while has_try < MAX_TRY:
+            try:
+                main(stuID, province, city, region)
+                break
+            except:
+                has_try += 1
+                time.sleep(10)
+                print("重试次数" + str(has_try))
+    del stuID
+    time.sleep(2)
     print("打卡任务全部完成！")
