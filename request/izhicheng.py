@@ -11,7 +11,7 @@ import requests
 students = []
 api_key = "API_KEY"
 api_url = "https://sctapi.ftqq.com/"
-MAX_TRY = 5  # 最大重试次数
+MAX_TRY = 20  # 最大重试次数
 
 
 # 如果检测到程序在 github actions 内运行，那么读取环境变量中的登录信息
