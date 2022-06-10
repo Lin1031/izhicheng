@@ -82,7 +82,7 @@ def main(stuID, province, city, region):
     new_json = processing_data(stuID, name, jsConfId, callbackConfId, province, city, region)
     headers = {
         'Host': 'dw10.fdzcxy.edu.cn',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+        'User-Agent': 'Mozilla/5.0 (Linux; Android 12; M2012K11AC Build/SKQ1.211006.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/89.0.4389.72 MQQBrowser/6.2 TBS/046010 Mobile Safari/537.36 SuperApp',
         'sessionID': sessionID,
         'Referer': reffer,
         'Cookie': cookie,
