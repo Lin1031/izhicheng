@@ -70,5 +70,16 @@ def tianbiao(stuID, province, city, region):
 
 
 if __name__ == '__main__':
-    tianbiao(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
+    has_try = 0
+    MAX_TRY = 20
+    while has_try < MAX_TRY:
+        try:
+            tianbiao(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+            break
+        except:
+            has_try += 1
+            time.sleep(10)
+            print("重试次数" + str(has_try))
+
     print(sys.argv[1], "填报成功！")
+
