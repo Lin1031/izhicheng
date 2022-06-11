@@ -65,5 +65,15 @@ def tianbiao(stuID, province, city, region):
 
 
 if __name__ == '__main__':
-    tianbiao(stuID, province, city, region)
+    has_try = 0
+    MAX_TRY = 20
+    while has_try < MAX_TRY:
+        try:
+            tianbiao(stuID, province, city, region)
+            break
+        except:
+            has_try += 1
+            time.sleep(10)
+            print("重试次数" + str(has_try))
+
     print(stuID, "填报成功！")
