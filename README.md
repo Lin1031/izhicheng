@@ -60,6 +60,7 @@ i至诚疫情防控每日填报助手，用于解决忘记填写每日打卡的�
 # GitHub Actions 使用视频
 **[使用步骤视频（点这里！！！）](https://www.bilibili.com/video/BV1NZ4y1a7He/)**
 
+[![使用步骤视频](https://images.cnblogs.com/cnblogs_com/Lin1031/1924181/o_220827121244_izhicheng.png)](https://www.bilibili.com/video/BV1NZ4y1a7He?share_source=copy_web)
 
 
 # 方法一： 使用自己的服务器运行
