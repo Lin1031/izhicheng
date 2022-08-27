@@ -93,7 +93,7 @@ Github提供了一个secret功能，用于存储密钥等敏感信息，请按�
 
 建议更改` .github/workflows/main.yml `中的 schedule 时间设置，避免过的人使用导致打卡失败
 
-# 方法三： 使用 GitHub Actions（request）
+# 方法三： 使用 GitHub Actions（request,适合20+人一起打卡）
 **[步骤截图 （点这里！！！具体截图）](https://github.com/Lin1031/izhicheng/blob/main/README/README_RE.md)**
 
 **使用步骤:**
