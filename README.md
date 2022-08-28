@@ -2,7 +2,7 @@
 
 i至诚疫情防控每日填报助手，用于解决忘记填写每日打卡的问题。
 
-**GitHub Action 每60天会自动关闭，需要手动重启**
+**GitHub Action 每60天会自动关闭，需要手动重启** **（[重启教程 （点这里！！！具体截图）](https://github.com/Lin1031/izhicheng/blob/main/README/README_UPDATE.md)）**
 
 
 # 注意
@@ -25,6 +25,7 @@ i至诚疫情防控每日填报助手，用于解决忘记填写每日打卡的�
 # 更新
 
 ```
+2022.08.28 增加：GitHub Action 60天重启教程
 2022.07.05 修复：selenium 缺少 typing_extensions 库的问题
 2022.06.11 更新：增加 Windows/Linux 重试次数
 2022.06.10 更新：添加请求头
