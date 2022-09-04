@@ -2,7 +2,7 @@
 
 i至诚疫情防控每日填报助手，用于解决忘记填写每日打卡的问题。
 
-**文字看不懂，可以看图文版或者视频教程**
+***文字看不懂，可以看图文版或者视频教程***
 
 **GitHub Action 每60天会自动关闭，需要手动重启** **（[重启教程 （点这里！！！具体截图）](https://github.com/Lin1031/izhicheng/blob/main/README/README_UPDATE.md)）**
 
