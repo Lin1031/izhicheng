@@ -41,4 +41,5 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install pytz requests datetime
           python -m pip install typing_extensions
+          python -m pip install packaging
           python ./Spider/izhicheng.py
